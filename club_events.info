@@ -1,4 +1,4 @@
-name = club_events
+name = Club Events
 description = Club Events and Registration module
 core = 7.x
 package = Club

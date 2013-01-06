@@ -326,6 +326,7 @@ function club_events_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'links' => TRUE,
             'view_mode' => '',
           ),
           'type' => 'entityreference_entity_view',
