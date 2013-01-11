@@ -11,7 +11,7 @@ function club_events_content_defaults() {
   $content = array();
 
   $content['doc_events'] = (object) array(
-    'exported_path' => 'help/documents/event-management',
+    'exported_path' => 'content/event-management',
     'title' => 'Event Management',
     'status' => '1',
     'promote' => '0',
