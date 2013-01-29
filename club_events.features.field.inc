@@ -57,6 +57,12 @@ function club_events_field_default_fields() {
           'type' => 'text_default',
           'weight' => '0',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -126,7 +132,6 @@ function club_events_field_default_fields() {
           ),
           'sort' => array(
             'direction' => 'ASC',
-            'field' => 'field_date:value',
             'property' => 'title',
             'type' => 'property',
           ),
@@ -156,6 +161,12 @@ function club_events_field_default_fields() {
           'type' => 'entityreference_label',
           'weight' => 6,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -184,10 +195,13 @@ function club_events_field_default_fields() {
   $fields['node-event-field_event_date'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_event_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -231,6 +245,12 @@ function club_events_field_default_fields() {
           'type' => 'date_default',
           'weight' => '1',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -253,12 +273,11 @@ function club_events_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'display_all_day' => 1,
           'increment' => '5',
           'input_format' => 'M j Y - g:i:sa',
           'input_format_custom' => '',
           'label_position' => 'above',
-          'repeat_collapsed' => 0,
+          'repeat_collapsed' => 1,
           'text_parts' => array(),
           'year_range' => '-2:+4',
         ),
@@ -331,6 +350,12 @@ function club_events_field_default_fields() {
           ),
           'type' => 'entityreference_entity_view',
           'weight' => '2',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -405,6 +430,12 @@ function club_events_field_default_fields() {
           'type' => 'registration_link',
           'weight' => '5',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -462,6 +493,9 @@ function club_events_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_event_type',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -493,7 +527,7 @@ function club_events_field_default_fields() {
       'bundle' => 'event',
       'default_value' => array(
         0 => array(
-          'tid' => '75',
+          'tid' => '90',
         ),
       ),
       'deleted' => '0',
@@ -506,6 +540,12 @@ function club_events_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -516,7 +556,7 @@ function club_events_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_event_type',
       'label' => 'Event Type',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -574,6 +614,12 @@ function club_events_field_default_fields() {
           'type' => 'list_default',
           'weight' => '4',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -592,8 +638,87 @@ function club_events_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_buttons',
+        'type' => 'options_select',
         'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_speaker'.
+  $fields['node-event-field_speaker'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_speaker',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Name of speaker/topic for this meeting',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 7,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_speaker',
+      'label' => 'Speaker',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '31',
       ),
     ),
   );
@@ -608,9 +733,11 @@ function club_events_field_default_fields() {
   t('Event Location');
   t('Event Registration');
   t('Event Type');
+  t('Name of speaker/topic for this meeting');
   t('Public events are displayed on the public events calendar. Private events are displayed only to members who are logged in to the website. ');
   t('Public or Private?');
   t('Select the type of event. If the Event Type is not present in this list, contact your administrator to add a new "Taxonomy Term" to "Event Type".');
+  t('Speaker');
 
   return $fields;
 }
