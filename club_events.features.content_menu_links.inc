@@ -16,13 +16,17 @@ function club_events_content_menu_links_defaults() {
     'link_path' => 'calendar',
     'router_path' => 'calendar',
     'link_title' => 'Calendar',
-    'options' => array(),
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
     'module' => 'system',
     'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-44',
+    'weight' => '0',
   );
   // Exported menu link: main-menu:pcalendar
   $menu_links['main-menu:pcalendar'] = array(
@@ -36,7 +40,7 @@ function club_events_content_menu_links_defaults() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-45',
+    'weight' => '0',
   );
   // Translatables
   // Included for use with string extractors like potx.
