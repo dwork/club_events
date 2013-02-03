@@ -177,7 +177,6 @@ function club_events_views_default_views() {
   $handler->display->display_options['filters']['field_event_type_tid']['value'] = array(
     90 => '90',
     94 => '94',
-    93 => '93',
   );
   $handler->display->display_options['filters']['field_event_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_event_type_tid']['exposed'] = TRUE;
