@@ -1248,10 +1248,6 @@ function club_events_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_speaker']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_speaker']['field_api_classes'] = 0;
-  /* Sort criterion: Field: Chapter/Club (field_chapter) */
-  $handler->display->display_options['sorts']['field_chapter_target_id']['id'] = 'field_chapter_target_id';
-  $handler->display->display_options['sorts']['field_chapter_target_id']['table'] = 'field_data_field_chapter';
-  $handler->display->display_options['sorts']['field_chapter_target_id']['field'] = 'field_chapter_target_id';
   /* Sort criterion: Content: Meeting/Event Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
@@ -1280,17 +1276,6 @@ function club_events_views_default_views() {
   $handler->display->display_options['filters']['field_event_type_tid']['reduce_duplicates'] = 0;
   $handler->display->display_options['filters']['field_event_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_type_tid']['vocabulary'] = 'event_type';
-  /* Filter criterion: Content: Meeting/Event Date (field_date) */
-  $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
-  $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
-  $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
-  $handler->display->display_options['filters']['field_date_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Meeting/Event Date';
-  $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
-  $handler->display->display_options['filters']['field_date_value']['expose']['multiple'] = FALSE;
   /* Filter criterion: Field: Chapter/Club (field_chapter) */
   $handler->display->display_options['filters']['field_chapter_target_id']['id'] = 'field_chapter_target_id';
   $handler->display->display_options['filters']['field_chapter_target_id']['table'] = 'field_data_field_chapter';
